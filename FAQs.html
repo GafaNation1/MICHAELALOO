@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FAQs - Michael Odhiambo Aloo</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="FAQs, Frequently Asked Questions, Michael Odhiambo Aloo, MOA, Web Developer" name="keywords">
+    <meta content="Frequently asked questions about working with Michael Odhiambo Aloo, web developer and designer based in Nairobi, Kenya." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .page-header {
+            background: #0BCEAF;
+            padding: 80px 0 50px 0;
+        }
+        .page-header h1 {
+            color: #ffffff;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .page-header p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+        }
+        .breadcrumb-nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .breadcrumb-nav a:hover {
+            color: #ffffff;
+        }
+        .breadcrumb-nav span {
+            color: rgba(255,255,255,0.5);
+            margin: 0 8px;
+            font-size: 0.9rem;
+        }
+        .breadcrumb-nav .current {
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+        .content-section {
+            padding: 70px 0;
+        }
+        .section-intro {
+            color: #6c757d;
+            line-height: 1.9;
+            font-size: 1rem;
+            margin-bottom: 45px;
+        }
+        .faq-category-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0BCEAF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            margin-top: 45px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .faq-category-title:first-of-type {
+            margin-top: 0;
+        }
+        .accordion .card {
+            border: none;
+            border-radius: 6px !important;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+        .accordion .card-header {
+            background: #fff;
+            border: none;
+            padding: 0;
+        }
+        .accordion .card-header button {
+            width: 100%;
+            text-align: left;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.97rem;
+            color: #343a40;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .accordion .card-header button:hover {
+            color: #0BCEAF;
+        }
+        .accordion .card-header button[aria-expanded="true"] {
+            color: #0BCEAF;
+        }
+        .accordion .card-header button .faq-icon {
+            color: #0BCEAF;
+            font-size: 0.85rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+        .accordion .card-header button[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+        }
+        .accordion .card-body {
+            padding: 5px 25px 22px 25px;
+            color: #6c757d;
+            line-height: 1.8;
+            font-size: 0.97rem;
+        }
+        .accordion .card-body a {
+            color: #0BCEAF;
+            font-weight: 500;
+        }
+        .accordion .card-body a:hover {
+            color: #078571;
+        }
+        .cta-box {
+            background: #343a40;
+            border-radius: 8px;
+            padding: 40px;
+            color: #fff;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .cta-box h4 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .cta-box p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 22px;
+        }
+        .cta-box a.btn {
+            background: #0BCEAF;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 100px;
+            text-decoration: none;
+        }
+        .cta-box a.btn:hover {
+            background: #078571;
+        }
+        .site-footer {
+            background: #0BCEAF;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-links a.active-page {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        .top-navbar {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .top-navbar .brand {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #343a40;
+            text-decoration: none;
+        }
+        .top-navbar .brand span {
+            color: #0BCEAF;
+        }
+        .top-navbar .back-link {
+            color: #0BCEAF;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .top-navbar .back-link:hover {
+            color: #078571;
+        }
+        .top-navbar .back-link i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="brand"><span>MICHAEL ODHIAMBO</span>- MOA</a>
+            <a href="index.html" class="back-link"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumb-nav mb-3">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">FAQs</span>
+            </div>
+            <h1 class="mb-2">Frequently Asked Questions</h1>
+            <p class="mb-0">Answers to the questions I get asked most often.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+
+                    <p class="section-intro">
+                        If you are thinking about working with me or want to know more about how I operate, these answers should cover most of what you need. If your question is not here, use the contact form on the main page.
+                    </p>
+
+                    <!-- Services -->
+                    <div class="faq-category-title"><i class="fa fa-briefcase mr-2"></i> Services</div>
+                    <div class="accordion" id="faqServices">
+
+                        <div class="card">
+                            <div class="card-header" id="h1">
+                                <button aria-expanded="true" aria-controls="a1" data-toggle="collapse" data-target="#a1">
+                                    What services do you offer?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a1" class="collapse show" aria-labelledby="h1" data-parent="#faqServices">
+                                <div class="card-body">
+                                    I offer web design, web development, hosting and domain setup, apps design, SEO configuration, and ongoing website management. You can see a full description of each service on the <a href="index.html#service">Services section</a> of my portfolio.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h2">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a2" data-toggle="collapse" data-target="#a2">
+                                    Do you work with clients outside Nairobi?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a2" class="collapse" aria-labelledby="h2" data-parent="#faqServices">
+                                <div class="card-body">
+                                    Yes. I work with clients remotely across Kenya and internationally. All communication and file sharing is handled online, so location is not a barrier.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h3">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a3" data-toggle="collapse" data-target="#a3">
+                                    Do you build e-commerce websites?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a3" class="collapse" aria-labelledby="h3" data-parent="#faqServices">
+                                <div class="card-body">
+                                    I build web-based applications and dynamic sites, but full e-commerce platforms with payment integration are handled on a case-by-case basis depending on the scope. Contact me to discuss your specific requirements.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Working Together -->
+                    <div class="faq-category-title"><i class="fa fa-handshake mr-2"></i> Working Together</div>
+                    <div class="accordion" id="faqWork">
+
+                        <div class="card">
+                            <div class="card-header" id="h4">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a4" data-toggle="collapse" data-target="#a4">
+                                    How do I start a project with you?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a4" class="collapse" aria-labelledby="h4" data-parent="#faqWork">
+                                <div class="card-body">
+                                    Send me a message through the <a href="index.html#contact">contact form</a> or email me at <a href="mailto:mikealoo2005@gmail.com">mikealoo2005@gmail.com</a>. Tell me what you need, and I will respond with next steps. There is no obligation when you first reach out.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h5">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a5" data-toggle="collapse" data-target="#a5">
+                                    How long does a typical website take to build?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a5" class="collapse" aria-labelledby="h5" data-parent="#faqWork">
+                                <div class="card-body">
+                                    A simple portfolio or informational website typically takes 3 to 7 days. More complex sites with custom functionality take longer, usually 2 to 4 weeks. The timeline depends on how quickly content and feedback are provided on your end too.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h6">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a6" data-toggle="collapse" data-target="#a6">
+                                    How many revision rounds are included?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a6" class="collapse" aria-labelledby="h6" data-parent="#faqWork">
+                                <div class="card-body">
+                                    This is agreed before the project starts. Standard projects include two rounds of revisions. Additional changes beyond that scope are billed separately at an agreed rate.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h7">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a7" data-toggle="collapse" data-target="#a7">
+                                    Will I own the website after it is built?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a7" class="collapse" aria-labelledby="h7" data-parent="#faqWork">
+                                <div class="card-body">
+                                    Yes. Once the project is complete and payment is settled, the website and all its files belong to you. I can also hand over login access to hosting, domain registrars, and any CMS involved.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Technical -->
+                    <div class="faq-category-title"><i class="fa fa-code mr-2"></i> Technical</div>
+                    <div class="accordion" id="faqTech">
+
+                        <div class="card">
+                            <div class="card-header" id="h8">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a8" data-toggle="collapse" data-target="#a8">
+                                    What technologies do you work with?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a8" class="collapse" aria-labelledby="h8" data-parent="#faqTech">
+                                <div class="card-body">
+                                    I work primarily with HTML, CSS, JavaScript, and SQL. For web applications, I use React and Supabase for the backend. I deploy sites on Netlify and am comfortable with Git, GitHub, and domain management through various registrars.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h9">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a9" data-toggle="collapse" data-target="#a9">
+                                    Will my website work on mobile devices?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a9" class="collapse" aria-labelledby="h9" data-parent="#faqTech">
+                                <div class="card-body">
+                                    Yes. Every website I build is fully responsive. It will display and function correctly on phones, tablets, and desktops across all major browsers.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h10">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a10" data-toggle="collapse" data-target="#a10">
+                                    Can you help me set up a domain and hosting?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a10" class="collapse" aria-labelledby="h10" data-parent="#faqTech">
+                                <div class="card-body">
+                                    Yes. I handle full hosting and domain setup including DNS configuration, SSL certificates, and deployment. I work with platforms like Netlify and other hosting providers depending on the project.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="h11">
+                                <button class="collapsed" aria-expanded="false" aria-controls="a11" data-toggle="collapse" data-target="#a11">
+                                    Can you take over and improve an existing website?
+                                    <i class="fa fa-chevron-down faq-icon"></i>
+                                </button>
+                            </div>
+                            <div id="a11" class="collapse" aria-labelledby="h11" data-parent="#faqTech">
+                                <div class="card-body">
+                                    Yes. I offer website management and improvement as a service. Send me access to the existing site and I will review it, identify what needs fixing or improving, and give you a clear plan before any work begins.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-box">
+                        <h4>Still have a question?</h4>
+                        <p>Send me a message and I will get back to you as soon as possible.</p>
+                        <a href="index.html#contact" class="btn">Contact Me</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="site-footer text-white py-5 px-sm-3 px-md-5">
+        <div class="container text-center py-3">
+            <div class="d-flex justify-content-center mb-3 footer-links">
+                <a href="privacy.html">Privacy</a>
+                <span class="px-3">|</span>
+                <a href="terms.html">Terms</a>
+                <span class="px-3">|</span>
+                <a href="faqs.html" class="active-page">FAQs</a>
+                <span class="px-3">|</span>
+                <a href="help.html">Help</a>
+            </div>
+            <p class="m-0 text-white">&copy; <a class="text-white font-weight-bold" href="index.html">Michael Odhiambo Aloo</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
