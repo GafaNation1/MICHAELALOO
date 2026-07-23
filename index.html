@@ -24,6 +24,43 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Floating Contact Buttons Style -->
+    <style>
+        .floating-contact-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .floating-contact-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin-top: 12px;
+            color: #fff;
+            font-size: 26px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+        }
+        .floating-contact-buttons a:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+        .floating-contact-buttons .whatsapp-btn {
+            background-color: #25D366;
+        }
+        .floating-contact-buttons .call-btn {
+            background-color: #0d6efd;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -84,13 +121,12 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="" class="btn btn-outline-light mr-5">Download CV</a>
-                        <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>
-                    </div>
+    <!-- Download Button -->
+    <a href="docs/MICHAEL ODHIAMBO TECH RESUME.pdf" download class="btn btn-outline-light mr-3">Download CV</a>
+
+    <!-- View CV Link -->
+    <a href="docs/MICHAEL ODHIAMBO TECH RESUME.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-light">View CV</a>
+</div>
                 </div>
             </div>
         </div>
@@ -434,29 +470,59 @@
                 <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h4 class="text-center mb-4">Have a project in mind? Send me a message and I will get back to you.</h4>
-                    <form>
-                        <div class="form-row">
-                            <div class="control-group col-sm-6 mb-3">
-                                <input type="text" class="form-control p-4" placeholder="Your Name" />
-                            </div>
-                            <div class="control-group col-sm-6 mb-3">
-                                <input type="email" class="form-control p-4" placeholder="Your Email" />
-                            </div>
-                        </div>
-                        <div class="control-group mb-3">
-                            <input type="text" class="form-control p-4" placeholder="Subject" />
-                        </div>
-                        <div class="control-group mb-3">
-                            <textarea class="form-control py-3 px-4" rows="5" placeholder="Message"></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-outline-primary">Send Message</button>
-                        </div>
-                    </form>
+    <div class="col-lg-8">
+        <h4 class="text-center mb-4">Have a project in mind? Send me a message and I will get back to you.</h4>
+        
+        <form id="contactForm" action="https://formspree.io/f/xdaqwadj" method="POST">
+            <div class="form-row">
+                <div class="control-group col-sm-6 mb-3">
+                    <input type="text" name="name" class="form-control p-4" placeholder="Your Name" required />
+                </div>
+                <div class="control-group col-sm-6 mb-3">
+                    <input type="email" name="email" class="form-control p-4" placeholder="Your Email" required />
                 </div>
             </div>
+            <div class="control-group mb-3">
+                <input type="text" name="subject" class="form-control p-4" placeholder="Subject" required />
+            </div>
+            <div class="control-group mb-3">
+                <textarea name="message" class="form-control py-3 px-4" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" id="submitBtn" class="btn btn-outline-primary">Send Message</button>
+            </div>
+            <div id="formStatus" class="mt-3 text-center"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            status.innerHTML = "<p class='text-success font-weight-bold'>Thank you! Your message has been sent.</p>";
+            form.reset();
+        } else {
+            status.innerHTML = "<p class='text-danger font-weight-bold'>Oops! There was a problem sending your message.</p>";
+        }
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Send Message";
+    });
+</script>
         </div>
     </div>
     <!-- Contact End -->
@@ -507,6 +573,16 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>
+
+    <!-- Floating Call & WhatsApp Buttons -->
+    <div class="floating-contact-buttons">
+        <a href="https://wa.me/254705047204" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+254705047204" class="call-btn" title="Call Me">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
 </body>
 
 </html>
