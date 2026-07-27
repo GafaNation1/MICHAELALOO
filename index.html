@@ -76,6 +76,70 @@
             background-color: #0d6efd;
         }
     </style>
+
+<!-- Structured Data (Schema.org JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://michaelaloo.co.ke/#person",
+      "name": "Michael Aloo",
+      "url": "https://michaelaloo.co.ke/",
+      "jobTitle": "Website/App Developer & Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Remote"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "knowsAbout": [
+        "Web Development",
+        "Frontend Engineering",
+        "Backend Engineering",
+        "UI/UX Web Design",
+        "Website Management",
+        "Business Proposal Writing",
+        "HTML/CSS/JavaScript",
+        "React",
+        "SQL Databases"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://michaelaloo.co.ke/#service",
+      "name": "Michael Aloo - Web & Software Engineering Services",
+      "url": "https://michaelaloo.co.ke/",
+      "provider": {
+        "@id": "https://michaelaloo.co.ke/#person"
+      },
+      "areaServed": [
+        "Nairobi",
+        "Kenya",
+        "Worldwide"
+        "Tanzania"
+        "South Africa"
+        "Africa"
+        "Europe"
+        "Asia"
+      ],
+      "serviceType": [
+        "Frontend Web Development",
+        "Backend Web Development",
+        "Website Design & Maintenance",
+        "Website Management",
+        "Business Proposal Writing"
+      ],
+      "description": "Professional web development, custom backend solutions, website management, and business proposal writing for startups, local businesses, and international clients."
+    }
+  ]
+}
+</script>
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <!-- Navbar Start -->
